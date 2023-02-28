@@ -35,4 +35,4 @@ jobs:
 
     - name: Run Pylint
       run: |
-        pylint --reports y mymath
+        pylint --reports y --fail-under 7 mymath
