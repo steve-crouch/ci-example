@@ -27,7 +27,12 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip
         pip3 install -r requirements.txt
+        pip3 pylint
  
     - name: Test with pytest
       run: |
         python3 -m pytest -v tests/test_factorial.py
+
+    - name: Run Pylint
+      run: |
+        pylint --reports y --fail-under 7 mymath
